@@ -1,0 +1,31 @@
+---
+version: '3.7'
+
+services:
+  samplePythonApp:
+    image: samplepythonapp:v1.2.1
+    container_name: samplePythonApp
+    restart: on-failure
+    expose:
+    - 14000-14100
+    volumes:
+    - samplePythonApp_vol:/app/data:rw
+    networks:
+    - edgenet
+    environment:
+      LOG_LEVEL: info
+      SAMPLE_VAR_1: 600
+      SAMPLE_VAR_2: 75.56
+      SAMPLE_VAR_3: Sample String
+    tmpfs:
+    - /temp:uid=5678,gid=5678
+      
+networks:
+  edgenet:
+    name: edgenet
+
+volumes:
+  samplePythonApp_vol:
+    name: samplePythonApp_vol
+
+...

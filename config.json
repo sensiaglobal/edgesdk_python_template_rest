@@ -1,0 +1,33 @@
+{
+  "app": {
+    "name": "Sample Python HCC2 Application",
+    "function_name": "samplePythonApp",
+    "version": {
+      "major": 1,
+      "minor": 0,
+      "micro": 0
+    },
+    "log_level": "info"
+  },
+  "registration": {
+    "static_enabled": true,
+    "targz": "./resources/configs/static/first_time_setup.tar.gz",
+    "dynamic_general_enable": false,
+    "dynamic_config_enable": false
+  },
+  "heartbeat": {
+    "interval": 5
+  },
+  "provisioning": {
+    "complex": false
+  },
+  "network": {
+    "rest_ip_override": "173.0.0.41",
+    "app_ip_override": "173.0.4.3"
+  },
+  "rest_api": {
+    "port": 7071,
+    "version": 1
+  }
+}
+  
